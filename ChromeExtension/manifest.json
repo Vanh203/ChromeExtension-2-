@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "My Extension Demo",
+    "version": "1.0.0.0",
+    "description": "This is a demo Ai PRM extension",
+    "icons": {
+        "16": "images/icon_16.png",
+        "32": "images/icon_32.png",
+        "48": "images/icon_48.png",
+        "128": "images/icon_128.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon_16.png",
+            "32": "images/icon_32.png",
+            "48": "images/icon_48.png",
+            "128": "images/icon_128.png"
+        }
+    },
+    "permissions": [
+        "tabs"
+      ],      
+    
+    "content_scripts": [{
+      "matches": ["https://chat.openai.com/"],
+      "js": ["js/content.js"]
+    }],
+    "web_accessible_resources": [
+        {
+          "resources": [
+            "images/*",
+            "html/*"
+          ],
+          "matches": [
+            "<all_urls>"
+          ]
+        }
+      ]
+}
